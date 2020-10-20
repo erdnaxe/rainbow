@@ -36,7 +36,7 @@ class rainbowBase:
 
     """ Emulation base class """
 
-    def __init__(self, trace=True, sca_mode=False,sca_HD=False):
+    def __init__(self, trace=True, sca_mode=False,sca_HD=True):
         self.breakpoints = []
         self.skips = []
         self.emu = None
