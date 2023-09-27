@@ -24,6 +24,17 @@ def test_hook_bypass_ctf2_addr():
     emu.start(0xCA9, 0xDCE)
 
 
+def test_hook_bypass_ctf2_addr():
+    emu = rainbow_x64()
+    emu.load("examples/ledger_ctf2/ctf2", typ=".elf")
+
+    def strtol(e):
+        e["rax"] = 0
+
+    emu.hook_bypass(2109344, strtol)
+    emu.start(0xCA9, 0xDCE)
+
+
 def test_hook_bypass_ctf2_name_empty():
     emu = rainbow_x64()
     emu.load("examples/ledger_ctf2/ctf2", typ=".elf")
