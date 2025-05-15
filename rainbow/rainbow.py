@@ -70,8 +70,8 @@ class Rainbow(abc.ABC):
     emu: Optional[uc.Uc]
     disasm: Optional[cs.Cs]
     reg_backup: List[int]
-    functions: Dict[str, int]
-    function_names: Dict[int, str]
+    functions: Dict[str, List[int]]
+    function_names: Dict[int, List[str]]
 
     # Arch. constants
     UC_ARCH: int
