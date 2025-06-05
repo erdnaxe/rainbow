@@ -409,7 +409,7 @@ class Rainbow(abc.ABC):
     def _get_addrs(self, name_or_addr):
         if isinstance(name_or_addr, str):
             # Stub all function addresses matching this name
-            addrs = [a for a, n in self.function_names.items() if n == name_or_addr]
+            addrs = [a for a, n in self.function_names.items() if name_or_addr in n]
             if not addrs:
                 raise IndexError(f"'{name_or_addr}' could not be found.")
             return addrs
